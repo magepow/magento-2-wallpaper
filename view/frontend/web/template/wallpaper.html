@@ -1,0 +1,33 @@
+<table width='100%'>
+    <tr>
+        <th width="30%">Width</th>
+        <th width="30%">Height</th>
+        <th width="30%">Unit</th>
+    </tr>
+    <tbody>
+    <tr>
+        <div id="error-value">
+            <div class="width-product"></div>
+            <div class="height-product"></div>
+        </div>
+        <td>
+            <input id="crop_width" type="number" name="wallmural[image_width]"
+                   data-bind="textInput: widthVal"
+                   placeholder="" class="form-control" maxlength="4" max="9999" min="0" onKeyDown="if(this.value.length==7 && event.keyCode>47 && event.keyCode < 58)return false;">
+        </td>
+        <td>
+            <input id="crop_height" type="number" name="wallmural[image_height]"
+                   data-bind="textInput: heightVal"
+                   placeholder="" class="form-control" maxlength="4" max="9999" min="0" onKeyDown="if(this.value.length==7 && event.keyCode>47 && event.keyCode < 58)return false;">
+        </td>
+        <td>
+            <select name="unit_wallmural" id="unit-show" data-bind="options: categoryVal,  selectedOptions: categorys"></select>
+        </td>
+        <input type="hidden" data-bind="textInput: materialValpro" class="form-control" id="crop_material">
+    </tr>
+    </tbody>
+    <p class="grandTotal" style="display: none;">
+    <span>Total product value:</span><span data-bind="text: (grandTotal())"/>
+    </p>
+</table>
+

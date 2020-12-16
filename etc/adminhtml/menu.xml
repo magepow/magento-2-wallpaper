@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * menu
+ *
+ * @copyright Copyright © 2020 Magepow. All rights reserved.
+ * @author    @copyright Copyright (c) 2014 Magepow (<https://www.magepow.com>)
+ * @license <https://www.magepow.com/license-agreement.html>
+ * @Author: magepow<support@magepow.com>
+ * @github: <https://github.com/magepow>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="magepow" title="Magepow" sortOrder="10"
+                module="Magepow_Wallpaper"  resource="Magepow_Wallpaper::wallpaper_manager"/>
+
+        <add id="Magepow_Wallpaper::menustrong" title="Wallpaper" module="Magepow_Wallpaper" sortOrder="10" parent="magepow" resource="Magepow_Wallpaper::menustrong"/>
+
+        <add id="Magepow_Wallpaper::list_wallpaper" title="List Wallpapers"
+             module="Magepow_Wallpaper" action="wallpaper" sortOrder="10" resource="Magepow_Wallpaper::list_wallpaper"
+             parent="Magepow_Wallpaper::menustrong"/>
+
+        <add id="Magepow_Wallpaper::configuration"
+             title="Configurations" module="Magepow_Wallpaper" sortOrder="10"
+             parent="Magepow_Wallpaper::menustrong"
+             action="adminhtml/system_config/edit/section/wallpaper"
+             resource="Magepow_Wallpaper::configuration" />
+    </menu>
+</config>

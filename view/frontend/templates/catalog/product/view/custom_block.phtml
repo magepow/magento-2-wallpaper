@@ -1,0 +1,39 @@
+<?php
+/**
+ * @var $block \Magepow\Wallpaper\Block\Catalog\Product\SelfView
+ */
+$helper = $this->helper("Magepow\Wallpaper\Helper\Data");
+$blockAttribute = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes');
+$_product = $blockAttribute->getProduct();
+$dataAttribute  = $blockAttribute->getAdditionalData();
+ if (!$helper->getConfigModule("general/enabled")) return;
+ if(!isset($dataAttribute['wallpaperproduct'])) return;
+foreach ($block->getWallpaper() as $item) {
+    $itemjs = $item['product_value'];
+}
+?>
+<div id="configure-dimensions" data-bind="scope: 'wallpaper'">
+    <div class="heading">
+        <span class="step_num">1</span>
+        <span class="title">Enter Your Dimensions</span>
+    </div>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+</div>
+
+<script type="text/x-magento-init">
+        {
+            "#configure-dimensions": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "wallpaper": {
+                           "component": "Magepow_Wallpaper/js/knockout-example",
+                           "listUnit": "<?= $helper->getConfigModule("general/unit_of_measure"); ?>",
+                           "productValue":"<?= __($itemjs)?>"
+                        }
+                    }
+                }
+            }
+        }
+</script>
+

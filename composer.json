@@ -1,0 +1,23 @@
+{
+  "name": "magepow/module-wallpaper",
+  "description": "Magepow Wallpaper",
+  "type": "magento2-module",
+  "version": "1.4.9",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Magepow",
+      "email": "support@alothemes.com",
+      "homepage": "https://www.alothemes.com",
+      "role": "Alothemes Support"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magepow\\Wallpaper\\": ""
+    }
+  }
+}

@@ -1,0 +1,67 @@
+
+
+<div id="getQuoteForm" style="display: none" class="reveal-modal tiny open" data-reveal="" aria-labelledby="modalTitle" aria-hidden="false" role="dialog" style="display: block; opacity: 1; visibility: visible; top: 464px;" tabindex="0">
+    <h2 id="modalTitle"><span class="ti ti-gallery"></span> Get Free Quote &amp; Preview</h2>
+    <a class="close-reveal-modal" aria-label="Close"><i class="ti ti-close"></i></a>
+    <div class="info-area">
+        <p><span class="ti ti-info-alt"></span><?= $block->
+                                    escapeHtmlAttr(__('end a photo of your wall and expect a preview from us soon. You can also specify your special requests. If everything is ok, you can place order.')) ?></p>
+    </div>
+    <form name="quoteForm" id="quoteForm" action="<?php echo $block->getBaseUrl().'wallpaper/index/post/';?>" enctype="multipart/form-data" method="post">
+        <fieldset class="fieldset">
+            <div class="row">
+                <div class="field large-12 required">
+                    <label class="label" for="title"><span><?= $block->
+                                    escapeHtmlAttr(__('Name')) ?></span></label>
+                    <input name="name" id="name" title="Name" value="" class="input-text" type="text"
+                                           required="true">
+                </div>
+                <div class="field large-12 required">
+                    <label class="label" for="title"><span><?= $block->
+                                    escapeHtmlAttr(__('Email')) ?></span></label>
+                    <input name="email" id="email" title="Email" value="" class="input-text" type="text"
+                                            placeholder="yout@email.com" required="true">
+                </div>
+                <div class="large-12">
+                    <label class="label" for="title"><span><?= $block->escapeHtmlAttr(__('Message')) ?></span></label>
+                    <textarea name="message" id="message" rows="5" placeholder="Dimensions of your wall, special requirements..." required="true"></textarea>
+                </div>
+                <div class="field large-12 required">
+                    <input type="file" name="attachment" id="attachment" class="inputfile" data-multiple-caption="{count} files selected" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" multiple=""  value="" required="true">
+                    <div class="info-area">
+                        <span class="small tip"><span class="ti ti-info-alt"></span><?= $block->escapeHtmlAttr(__('If you send your space photos, we can prepare a preview with your design')) ?></span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary">
+                <span><?php echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+    </form>
+</div>
+
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/modal'],
+        function ($, modal) {
+            var modaloption = {
+                type: 'popup',
+                modalClass: 'modal-popup',
+                responsive: true,
+                innerScroll: true,
+                clickableOverlay: true
+            };
+            $("#get-free-quote").on("click", function (){
+                var callforoption = modal(modaloption, $('#getQuoteForm'));
+                $('#getQuoteForm').modal('openModal');
+            })
+
+
+        }
+    );
+</script>
+

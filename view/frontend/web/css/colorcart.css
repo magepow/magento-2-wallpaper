@@ -1,0 +1,165 @@
+/* .newcolor{
+    background: #29487d !important;
+    box-shadow: 1px 5px 5px 1px rgba(66, 103, 178, 0.51);
+    font-size: 23px !important;
+    font-weight: bold !important;
+    border-radius: 10px;
+    height: 60px;
+    font-family: cursive !important;
+}
+#get-free-quote{
+    background-color: #555;
+    color: #FFF;
+    font-size: 1rem;
+    background-image: none;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    width: 35%;
+    display: block;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+#product-addtocart-button-one{
+    background-color: #555;
+    color: #FFF;
+    font-size: 1rem;
+    background-image: none;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    width: 38%;
+    margin-left: 2%;
+    display: block;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -1px;
+    border: none;
+}
+#getQuoteForm{
+    display: none;
+}
+.width,.height,.unit{
+    padding-left: .33333rem;
+    padding-right: .33333rem;
+    width: 30%;
+    padding-bottom: 5px;
+    float: left;
+}
+.material-select{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.material-wallpaper{
+    border-radius: 5px;
+    padding: 20px 7px;
+    float: left;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.material-icons-wrapper .material-wallpaper a{
+    text-decoration:none;
+    color: #555;
+}
+.material-icons-wrapper .material-wallpaper .entities-show{
+    float: right;
+    display: none;
+}
+.heading{
+    border-bottom: 2px solid #000000;
+    padding: 10px 0px;
+    font-weight: bold;
+    margin-bottom: 1.33333rem;
+}
+.frame{
+    clear: left;
+}
+
+.prefix-round{
+    padding: 15px 10px;
+}
+#configure-dimensions .prefix-round .columns .col-sm-4{
+    float: left;
+    width: 25%;
+    font-size: 23px;
+    text-align: center;
+    line-height: 23px;
+
+}
+#configure-dimensions .prefix-round .columns .col-sm-8{
+    float: left;
+    width: 60%;
+}
+.grandTotal
+{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.add-class-style{
+    font-weight: bold;
+    margin:0px 10px 5px 0px;
+}
+.addclass-material{
+    background-color: #e1f3e8;
+    font-weight: bold;
+}
+#product-options-wrapper .fieldset .field{
+    display: none !important;
+}
+.selected-wallpaper{
+    background-color: #e1f3e8;
+}
+.showError{
+    border-radius: 5px;
+    background-color: orange;
+    margin: 5px;
+    float: left;
+    padding: .4rem 1.73333rem .4rem .4rem;
+    width: 80%;
+    display: block !important;
+}
+.wallmural_material{
+    float: left;
+    width: 100%;
+}
+.material-wallpaper .entities-show span{
+    z-index: 1;
+    background: #fff;
+    position: absolute;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: -18px;
+    height: 30px;
+    font-size: 20px;
+}
+#wallpaperMaterials .row.materials .material.non_woven{
+    width: 30%;
+    float: left;
+    padding: 0px 10px;
+    margin-right: 15px;
+}
+
+.row.materials .material.non_woven.selected .button{
+    background-color: #43ac6a;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+
+}
+
+#wallpaperMaterials{
+  display: none;
+
+}
+
+.selected-wallpaper .entities-show{
+    display: block;
+}
+ */

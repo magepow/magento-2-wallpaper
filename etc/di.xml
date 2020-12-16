@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="wallpaper_listing_data_source" xsi:type="string">Magepow\Wallpaper\Model\ResourceModel\Wallpaper\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magepow\Wallpaper\Controller\Adminhtml\Index\Image\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magepow\Wallpaper\WallpaperImageUpload</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magepow\Wallpaper\WallpaperImageUpload" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">wallpaper/tmp/images</argument>
+            <argument name="basePath" xsi:type="string">wallpaper/images</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magepow\Wallpaper\Model\ResourceModel\Wallpaper\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magepow_wallpaper</argument>
+            <argument name="resourceModel" xsi:type="string">Magepow\Wallpaper\Model\ResourceModel\Wallpaper</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\ProductDataProvider">
+        <arguments>
+            <argument name="addFilterStrategies" xsi:type="array">
+                <item name="fulltext" xsi:type="object">Magento\CatalogSearch\Ui\DataProvider\Product\AddFulltextFilterToCollection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Mail sending with attachment -->
+    <preference for="\Magento\Framework\Mail\Template\TransportBuilder" type="Magepow\Wallpaper\Model\Mail\Template\TransportBuilder" />
+</config>

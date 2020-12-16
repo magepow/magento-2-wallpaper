@@ -1,0 +1,158 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+$helper = $this->helper('Magepow\Wallpaper\Helper\Data');
+$blockAttribute = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes');
+$_product = $blockAttribute->getProduct();
+$dataAttribute  = $blockAttribute->getAdditionalData();
+
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+    <div id="double-wallpaper"></div>
+    <div class="box-tocart">
+        <div class="fieldset">
+            <?php if ($block->shouldRenderQuantity()): ?>
+                <div class="field qty">
+                    <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
+                    <div class="control">
+                        <input type="number"
+                               name="qty"
+                               id="qty"
+                               maxlength="12"
+                               value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>"
+                               title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
+                               data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                        />
+                    </div>
+                </div>
+                <!-- Custom Input Field -->
+            <?php if ($helper->getConfigModule("general/enabled") == true):?>
+            <?php if (isset($dataAttribute['wallpaperproduct'])):?>
+                <div style="display: none" id="hidden-addcart">
+                    <input type="hidden" value="" name="widthVal" id="width-product">
+                    <input type="hidden" value="" name="heightVal" id="height-product">
+                    <input type="hidden" value="" name="unit_addcart" id="unit-show-addcart">
+                    <input type="hidden" value="30" name="category_a" id="category-show">
+                    <input type="hidden" name="wallpaper_attribute" value="<?php echo "1"; ?>" id="wallpaper_attribute">
+                </div>
+
+            <?php endif; ?>
+            <?php endif; ?>
+
+                <!-- Custom Input Field -->
+                <br>
+            <?php endif; ?>
+            <?php echo $this->getLayout()
+          ->createBlock('Magento\Catalog\Pricing\Render',
+                  "product.price.final",
+                    [
+                        'data' => [
+                            'price_render' => 'product.price.render.default',
+                            'price_type_code' => 'final_price',
+                            'zone' => 'item_view'
+                        ]
+                   ]
+                  )
+          ->toHtml();?>
+            <div class="actions">
+                <button type="submit"
+                        title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
+                        class="action primary tocart"
+                        id="product-addtocart-button">
+                    <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+                </button>
+                <?php echo $block->getChildHtml('', true) ?>
+            </div>
+            <?php if ($helper->getConfigModule("general/enabled") == true):?>
+            <?php if (isset($dataAttribute['wallpaperproduct'])):?>
+            <div class="get-quote-box">
+                <a href="javascript:" data-reveal-id="getQuoteForm" class="button get-free-quote expand round" id="get-free-quote">
+                    <span class="ti ti-pencil-alt"></span>
+                    <span>Get Quote &amp; Preview</span>
+                </a>
+                <button type="submit"
+                        title="<?= /* @escapeNotVerified */ __("Buy Sample") ?>"
+                        class="action primary tocart-sample"
+                        id="product-addtocart-button-one">
+                    <span><?= /* @escapeNotVerified */ __("Buy Sample") ?></span>
+                </button>
+            </div>
+            <?php endif; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if ($block->isRedirectToCartEnabled()) : ?>
+    <script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/product/view/validation": {
+                "radioCheckboxClosest": ".nested"
+            }
+        }
+    }
+</script>
+<?php else : ?>
+    <script>
+        require([
+            'jquery',
+            'mage/mage',
+            'Magento_Catalog/product/view/validation',
+            'Magento_Catalog/js/catalog-add-to-cart'
+        ], function ($) {
+            'use strict';
+            $('#product_addtocart_form').mage('validation', {
+                radioCheckboxClosest: '.nested',
+                submitHandler: function (form) {
+                    var widget = $(form).catalogAddToCart({
+                        bindSubmit: false
+                    });
+                    widget.catalogAddToCart('submitForm', $(form));
+                    return false;
+                }
+            });
+        });
+    </script>
+<?php endif; ?>
+
+<?php if ($helper->getConfigModule("general/enabled") == true):?>
+<?php if (!isset($dataAttribute['wallpaperproduct'])) return;?>
+<script>
+    require(['jquery'],  function ($) {
+        'use strict';
+            $("#product-addtocart-button").on('click', function () {
+                    let widthProduct = $("#crop_width").val();
+                    let heightProduct = $("#crop_height").val();
+                    let unitShow = $("#unit-show").val();
+                    let material = $("#crop_material").val();
+                    $("#width-product").val(widthProduct);
+                    $("#height-product").val(heightProduct);
+                    $("#unit-show-addcart").val(unitShow);
+                    $("#category-show").val(material);
+                    document.getElementsByClassName("product-custom-option")[0].value = widthProduct + " " + unitShow;
+                    document.getElementsByClassName("product-custom-option")[1].value =  heightProduct + " " + unitShow;
+                    document.getElementsByClassName("product-custom-option")[2].value = '';
+                    document.getElementsByClassName("product-custom-option")[3].value = $(".wallmural_material").find(".selected-wallpaper .material-name").text();
+
+            })
+            $(document).on('click','#product-addtocart-button-one', function () {
+                    $("#width-product").val("");
+                    document.getElementsByClassName("product-custom-option")[3].value = $(".wallmural_material").find(".selected-wallpaper .material-name").text();
+                    document.getElementsByClassName("product-custom-option")[2].value = "Sample";
+                    document.getElementsByClassName("product-custom-option")[1].value = '';
+                    document.getElementsByClassName("product-custom-option")[0].value = '';
+            })
+
+    })
+</script>
+
+<?php endif;?>
+

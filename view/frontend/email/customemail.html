@@ -1,0 +1,29 @@
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+
+        <td><strong>{{trans "Name:"}}</strong></td>
+
+        <td>{{var name}}</td>
+
+    </tr>
+    <tr>
+
+        <td><strong>{{trans "Email:"}}</strong></td>
+
+        <td>{{var email}}</td>
+
+    </tr>
+
+</table>
+
+<p><strong>{{trans "Message:"}}</strong></p>
+
+<p>{{var message}}</p>
+
+{{layout handle="email_product_list" products=$collectionProduct area="frontend"}}
+
+
+
+{{template config_path="design/email/footer_template"}}

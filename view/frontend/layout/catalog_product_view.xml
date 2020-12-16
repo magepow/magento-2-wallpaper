@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magepow_Wallpaper::css/colorcart.css"></css>
+    </head>
+    <body>
+
+        <move element="product.info.sku" destination="product.info.main" before="-" />
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View\Description" after="product.info.details" name="product.info.description" template="Magepow_Wallpaper::catalog/product/view/attribute.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getDescription</argument>
+                    <argument name="at_code" xsi:type="string">description</argument>
+                    <argument name="css_class" xsi:type="string">description</argument>
+                    <argument name="at_label" xsi:type="string">none</argument>
+<!--                    <argument name="title" translate="true" xsi:type="string">Details</argument>-->
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.main">
+            <block class="Magepow\Wallpaper\Block\Catalog\Product\ViewEmail" name="customemail_index_index" template="Magepow_Wallpaper::customemail_index_index.phtml"
+                   before="product.info.extrahint"/>
+            
+            <block class="Magepow\Wallpaper\Block\Catalog\Product\ViewConfigure" name="product.info.custom_block" template="Magepow_Wallpaper::catalog/product/view/custom_block.phtml"
+                   before="product.info.price"/>
+            <block
+                class="Magepow\Wallpaper\Block\Catalog\Product\SelfView"
+                name="custom.text"
+                template="Magepow_Wallpaper::catalog/product/view/selfwallpaper.phtml"
+                after="product.info.price"/>
+            
+        </referenceBlock>
+        
+        <referenceBlock name="product.price.final" remove="true"/>
+
+        <referenceBlock name="product.info.addtocart">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magepow_Wallpaper::catalog/product/view/addtocart.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="product.info.addtocart.additional">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magepow_Wallpaper::catalog/product/view/addtocart.phtml</argument>
+            </action>
+        </referenceBlock>
+    
+        <!-- <move element="page.main.title" destination="col.product.info.main.left" before="-"/> -->
+        <!-- <move element="product.info.media" destination="product.media.wrapper" before="-" />
+        <move element="product.info.main" destination="product.main.wrapper" before="-" /> -->
+    </body>
+</page>

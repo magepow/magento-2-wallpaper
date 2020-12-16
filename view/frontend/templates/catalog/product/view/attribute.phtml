@@ -1,0 +1,80 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+
+$_call = $block->getAtCall();
+$_code = $block->getAtCode();
+$_className = $block->getCssClass();
+$_attributeLabel = $block->getAtLabel();
+$_attributeType = $block->getAtType();
+$_attributeAddAttribute = $block->getAddAttribute();
+
+$renderLabel = true;
+// if defined as 'none' in layout, do not render
+if ($_attributeLabel == 'none') {
+    $renderLabel = false;
+}
+
+if ($_attributeLabel && $_attributeLabel == 'default') {
+    $_attributeLabel = $_product->getResource()->getAttribute($_code)->getStoreLabel();
+}
+if ($_attributeType && $_attributeType == 'text') {
+    $_attributeValue = ($_helper->productAttribute($_product, $_product->$_call(), $_code))
+        ? $_product->getAttributeText($_code)
+        : '';
+} else {
+    $_attributeValue = $_helper->productAttribute($_product, $_product->$_call(), $_code);
+}
+?>
+<div class="custom-bottom_detail">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="sidebar-bottom_product block_quality">
+                <h4 class="sidebar-bottom_product_title">HP PRINT QUALITY</h4>
+                <div class="sidebar-bottom_product_content">We produce our products by using HP Latex water based inks. Our printer is Energy Star Certified. Also inks are nature friendly and completely odorless. Latex inks provide a high resolution prints which are scratch and water resistant.</div>
+            </div>
+            <div class="sidebar-bottom_product block_shipping">
+                <h4 class="sidebar-bottom_product_title">FREE & FAST SHIPPING</h4>
+                <div class="sidebar-bottom_product_content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam praesentium at fugiat quae inventore. Consequuntur magnam dolores adipisci, quos fugit repellat voluptatem unde animi sit quas officiis numquam at earum.</div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <?php if ($_attributeValue) :?>
+                <div class="product attribute <?= $block->escapeHtmlAttr($_className) ?>">
+                    <?php if ($renderLabel) :?>
+                        <strong class="type"><?= $block->escapeHtml($_attributeLabel) ?></strong>
+                    <?php endif; ?>
+                    <div class="value" <?= /* @noEscape */ $_attributeAddAttribute ?>><?= /* @noEscape */ $_attributeValue ?></div>
+                </div>
+            <?php endif; ?>
+            <!-- list category -->
+            <ul class="list-category">
+                <li class="list-category_element"><a href="#">Cafe</a></li>
+                <li class="list-category_element"><a href="#">Bathroom</a></li>
+                <li class="list-category_element"><a href="#">Dining Room</a></li>
+                <li class="list-category_element"><a href="#">Cafe</a></li>
+                <li class="list-category_element"><a href="#">Bathroom</a></li>
+                <li class="list-category_element"><a href="#">Dining Room</a></li>
+            </ul>
+            <!--  -->
+        </div>
+    </div>
+</div>

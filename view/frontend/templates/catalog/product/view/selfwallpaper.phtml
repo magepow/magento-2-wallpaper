@@ -1,0 +1,120 @@
+<?php
+/**
+ * @var $block \Magepow\Wallpaper\Block\Catalog\Product\SelfView
+ */
+
+$helper = $this->helper("Magepow\Wallpaper\Helper\Data");
+$blockAttribute = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes');
+$_product = $blockAttribute->getProduct();
+$dataAttribute  = $blockAttribute->getAdditionalData();
+if (!$helper->getConfigModule("general/enabled")) return;
+if(!isset($dataAttribute['wallpaperproduct'])) return;
+$imageProduct = $block->getWallpaper()
+?>
+<?php 
+    $product = $block->getProduct();
+    $show_size = false;
+    if ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
+        
+        $data = $product->getTypeInstance()->getConfigurableOptions($product);
+        $show_size = false;
+        foreach ($data as $key => $value) {
+            if($value['0']['attribute_code'] == 'color')
+            {
+                $show_size = true;
+                break;
+            }
+        }        
+    }
+    if ($show_size){
+?>
+    <style type="text/css">#wallmural_material .heading .step_num:before{content: "3";}</style>
+<?php }else{?>
+    <style type="text/css">#wallmural_material .heading .step_num:before{content: "2";}</style>
+<?php }?>
+<div class="wallpaper wallmural_material" id="wallmural_material">
+    <div class="heading">
+        <span class="step_num"></span>
+        <span class="title">Select Material</span>
+    </div>
+    <div class="material-select">
+        <input id="wallmural_material" type="hidden" name="wallmural[material]" class="form-control" value="self_adhesive">
+        <div class="material-icons-wrapper">
+            <!--           ==================== Add product ========== -->
+            <?php foreach ($imageProduct as  $value):?>
+                <?php if ($value['status']== 1):?>
+                    <div class="material-wallpaper">
+                        <a href="javascript:void(0)" data-reveal-id="wallpaperMaterials" class="entities-show"></a>
+                        <a href="javascript:void(0)" class="material-wallpaper__option">
+                            <img src="<?php echo $this->getData('mediaURL') . $value['image']; ?>" alt="" class="b-lazy b-error">
+                            <div class="material-wallpaper__option_content">
+                                <span class="material-name"><?= __($value['name']) ?></span>
+                                <span class="material-price" data-price-amount="<?= __(floatval($value['product_value']))?>"><span>
+                                    <span class="price">$<?= __($value['product_value']) ?><span>/m²</span></span> </span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    'use strict';
+    require(['jquery'],
+        function ($) {
+            $("#double-wallpaper").append($(".wallmural_material").clone(true));
+            $(".wallmural_material:first").remove();
+
+
+            if ($("div").hasClass('color')) {
+                '<style type="text/css">.step_num{content: "3" !important;}</style>'
+            }
+
+            $(".wallmural_material .material-wallpaper:last").addClass("selected-wallpaper");
+            $(document).on('click', '.wallmural_material .material-wallpaper', function () {
+               
+                if ($("span").hasClass('special-price')) {
+                     $('.special-price').find('.price').html($(this).find(".price").clone(true));
+                    
+                 }else{
+                    $(".box-tocart").find('.price').html($(this).find(".price").clone(true));
+
+                 }
+                $("#crop_material").val($(this).find(".material-price").data("price-amount")).trigger("change");
+                $(".wallmural_material .material-wallpaper").removeClass("selected-wallpaper");
+                $(this).addClass("selected-wallpaper");
+                $("#category-show").val($(this).find(".material-price").data("price-amount"));
+            })
+            $(document).on("click", '.wallmural_material .selected-wallpaper .entities-show' ,function (){
+                $('#wallpaper-saticblock').show(500);
+                $("#close-block").click(function (){
+                    $("#wallpaper-saticblock").hide(500);
+                })
+            })
+        }
+    );
+</script>
+
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/modal'],
+        function ($, modal) {
+            var modaloption = {
+                type: 'popup',
+                modalClass: 'modal-popup',
+                responsive: true,
+                innerScroll: true,
+                clickableOverlay: true
+            };
+            $(document).on("click", '.wallmural_material .selected-wallpaper .entities-show' ,function (){
+                var callforoption = modal(modaloption, $('#wallpaperMaterials'));
+                $('#wallpaperMaterials').modal('openModal');
+            })
+        }
+    );
+</script>
