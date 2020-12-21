@@ -3,7 +3,9 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="wallpaper_listing_data_source" xsi:type="string">Magepow\Wallpaper\Model\ResourceModel\Wallpaper\Collection</item>
+                <item name="wallpaper_listing_data_source" xsi:type="string">
+                    Magepow\Wallpaper\Model\ResourceModel\Wallpaper\Grid\Collection
+                </item>
             </argument>
         </arguments>
     </type>
@@ -12,7 +14,8 @@
             <argument name="imageUploader" xsi:type="object">Magepow\Wallpaper\WallpaperImageUpload</argument>
         </arguments>
     </type>
-    <virtualType name="Magepow\Wallpaper\WallpaperImageUpload" type="Magento\Catalog\Model\ImageUploader">
+    <virtualType name="Magepow\Wallpaper\WallpaperImageUpload"
+                 type="Magento\Catalog\Model\ImageUploader">
         <arguments>
             <argument name="baseTmpPath" xsi:type="string">wallpaper/tmp/images</argument>
             <argument name="basePath" xsi:type="string">wallpaper/images</argument>
@@ -24,7 +27,8 @@
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="Magepow\Wallpaper\Model\ResourceModel\Wallpaper\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="Magepow\Wallpaper\Model\ResourceModel\Wallpaper\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">magepow_wallpaper</argument>
             <argument name="resourceModel" xsi:type="string">Magepow\Wallpaper\Model\ResourceModel\Wallpaper</argument>
@@ -39,5 +43,6 @@
     </type>
 
     <!-- Mail sending with attachment -->
-    <preference for="\Magento\Framework\Mail\Template\TransportBuilder" type="Magepow\Wallpaper\Model\Mail\Template\TransportBuilder" />
+    <preference for="\Magento\Framework\Mail\Template\TransportBuilder"
+                type="Magepow\Wallpaper\Model\Mail\Template\TransportBuilder" />
 </config>
