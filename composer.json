@@ -1,15 +1,20 @@
 {
-  "name": "magepow/module-wallpaper",
-  "description": "Magepow Wallpaper",
+  "name": "magepow/wallpaper",
+  "description": "Change the price of the product as desired.",
+  "require": {
+    "magepow/core": "^1.0.0"
+  },
   "type": "magento2-module",
-  "version": "1.4.9",
-  "license": "proprietary",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
   "authors": [
     {
       "name": "Magepow",
-      "email": "support@alothemes.com",
-      "homepage": "https://www.alothemes.com",
-      "role": "Alothemes Support"
+      "email": "support@magepow.com",
+      "homepage": "https://magepow.com",
+      "role": "Technical Support"
     }
   ],
   "autoload": {

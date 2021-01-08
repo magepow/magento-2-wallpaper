@@ -1,12 +1,34 @@
-# magento2-wallpaper
+# Magento2 Wallpaper
 
-# I : Frontend Show 
+##This module can be used for purposes such as:
+    -* wallpaper .
+    -* sewing fabric.
+    -* tiled ceramic tiles.
+    -* marble .
+    -* parquet floors.
+
+    * Can norm size, product quality as desired
+
+    * You can receive product quality reviews, feedback from customers or 
+    you can receive information from products that customers want to order separately.
+
+# I : Download Magento 2 Wallpaper Extension
+   ### ✓ Install Magepow Wallpaper via composer (recommend)
+
+Run the following command in Magento 2 root folder:
+    
+    composer require magepow/wallpaper
+    php bin/magento setup:upgrade
+    php bin/magento setup:static-content:deploy -f
+    php bin/magento c:f
+
+# II : Frontend Show 
 
 website demo : https://wp2cart.com/colornew
 
 demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-cartoon-animals-wallpape.html
 
- I *: Product View
+ ###I *: Product View
     
     If you want to buy a sample product, please click on "Buy Sample", 
     the price will be customized according to the administrator's settings
@@ -22,11 +44,11 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
     
 ![price-frontend.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/price-frontend.png)
 
- II *: Shopping cart show
+ ###II *: Shopping cart show
 
 ![show-price-cart.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/show-price-cart.png)
 
-# II : ConFig Admin 
+# III : User guide ConFig Admin 
 #step 1: Add new image 
 
     Step 1.1 : Magepow=>List Wallpaper => add new Image , Enter the required information 
