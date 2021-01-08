@@ -29,7 +29,7 @@ website demo : https://wp2cart.com/colornew
 
 demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-cartoon-animals-wallpape.html
 
- ###I *: Product View
+ ### I *: Product View
     
     If you want to buy a sample product, please click on "Buy Sample", 
     the price will be customized according to the administrator's settings
@@ -48,12 +48,12 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
 ![resultfrontend.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/resultfrontend.png)
 
 
- ###II *: Shopping cart show
+ ### II *: Shopping cart show
 
 ![show-price-cart.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/show-price-cart.png)
 
 # III : User guide ConFig Admin 
-#step 1: Add new image 
+# step 1: Add new image 
 
     Step 1.1 : Magepow=>List Wallpaper => add new Image , Enter the required information 
     and then click on Save Image.
@@ -64,7 +64,7 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
 
 
 
-#Step 2 . Catalog Product :  where to add necessary option attributes and enable or disable custom functions
+# Step 2 . Catalog Product :  where to add necessary option attributes and enable or disable custom functions
 
     Step 2.1 Catalog=>Product=>Edit  Or  Add Product => Wallpaper Product => yes or no
 
@@ -87,7 +87,7 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
 ![config-product-3.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/config-product-3.png)
 
 
-#Step 3 : Configuration Wallpaper : Where to enable or disable the module and modify the sample price and units of measure for the product
+# Step 3 : Configuration Wallpaper : Where to enable or disable the module and modify the sample price and units of measure for the product
 
     Step 3.1 : STORES => Configuration => Magepow => Wallpaper
 
@@ -99,7 +99,7 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
 
 ![store-config.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/store-config.png)
 
-#Step 4 : On Of Attributes Show Page : Conditions are necessary and sufficient to display attributes product information
+# Step 4 : On Of Attributes Show Page : Conditions are necessary and sufficient to display attributes product information
 
     Step 4.1 : STORES => Attributes =>Product => Search (wallpaperproduct)=>click wallpaperproduct
 
