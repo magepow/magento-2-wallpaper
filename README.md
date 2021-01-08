@@ -1,6 +1,6 @@
 # Magento2 Wallpaper
 
-##This module can be used for purposes such as:
+## This module can be used for purposes such as:
 
     -* wallpaper .
     -* sewing fabric.
