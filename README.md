@@ -4,11 +4,17 @@
 
  I *: Product View
     
-    If you want to buy a sample product, please click on "Buy Sample", the price will be customized according to the administrator's settings in the admin guide below.
+    If you want to buy a sample product, please click on "Buy Sample", 
+    the price will be customized according to the administrator's settings
+    in the admin guide below.
     
-    If you want to buy products of different quality and size as desired please click on but the options are in "Select Material" and "Enter Your Dimensions" the price will be changed according to the prices listed in the settings. are guided below
+    If you want to buy products of different quality and size as desired 
+    please click on but the options are in "Select Material" and "Enter Your Dimensions" 
+    the price will be changed according to the prices listed in the settings. are guided below
     
-    Anything you need help with making product changes or comments on certain products can be sent via the comment box by clicking "Get Quote & Preview" and entering the required information.
+    Anything you need help with making product changes or comments on certain products 
+    can be sent via the comment box by clicking "Get Quote & Preview" and entering the 
+    required information.
     
 ![price-frontend.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/price-frontend.png)
 
@@ -19,7 +25,8 @@
 # II : ConFig Admin 
 #step 1: Add new image 
 
-    Step 1.1 : Magepow=>List Wallpaper => add new Image , Enter the required information and then click on Save Image.
+    Step 1.1 : Magepow=>List Wallpaper => add new Image , Enter the required information 
+    and then click on Save Image.
 
 ![add-new-image-1.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/add-new-image-1.png)
 
@@ -82,7 +89,8 @@
 
     Step 5.1 STORES => Configuration => GENERAL => Contacts
     * Contact Us => Enable Contact Us => Yes
-    * Email Options = > Send Emails To (Enter the email you want to send and receive related information from the customer when it is received outside the frontend)
+    * Email Options = > Send Emails To (Enter the email you want to send and receive 
+    related information from the customer when it is received outside the frontend)
     Example (magepow@gmail.com)
     
     * Email Options = > Email Sender => General Contact
