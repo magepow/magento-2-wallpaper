@@ -11,13 +11,13 @@ Run the following command in Magento 2 root folder:
     php bin/magento setup:static-content:deploy -f
     php bin/magento c:f
 
-# II : Frontend Show 
+# II : Results In Frontend
 
 website demo : https://wp2cart.com/colornew
 
 demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-cartoon-animals-wallpape.html
 
- ### I *: Product View
+ ### I *: Catalog Product View
     
     If you want to buy a sample product, please click on "Buy Sample", 
     the price will be customized according to the administrator's settings
@@ -117,3 +117,13 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
     
 
 ![config-contacts-sendmail.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/config-contacts-sendmail.png)
+
+# IV : - CUSTOM SUPPORT
+
+### 1 - Support
+- Ticket Support: http://alothemes.com/ticket. If you have found any bugs or have some other problems with this extension. If the problem is not covered there, you can contact us via support center. We will respond as soon as possible (within 24 – 48 hours, usually much faster)
+
+### 2 - Contact
+- Support Email support@alothemes.com
+
+- Contact Sales: contact@alothemes.com
