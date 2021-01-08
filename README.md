@@ -1,5 +1,8 @@
 # Magento2 Wallpaper
 
+# Details
+
+- Module has the function of easily changing the default price of the product,
 
 # I : Download Magento 2 Wallpaper Extension
    ### ✓ Install Magepow Wallpaper via composer (recommend)
@@ -74,15 +77,17 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
 ![config-product-3.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/config-product-3.png)
 
 
-# Step 3 : Configuration Wallpaper : Where to enable or disable the module and modify the sample price and units of measure for the product
+# Step 3 : How To Enable/Disable The Extension
 
-   ### Step 3.1 : STORES => Configuration => Magepow => Wallpaper
 
-    General => Enable : Yes Or No   Turn Module on or off
+   ### Step 3.1 : Configuration Wallpaper : Where to enable or disable the module and modify the sample price and units of measure for the product
+   ##### STORES => Configuration => Magepow => Wallpaper
 
-	Unit Wallpaper  Select Unit of measure
+    	STORES => Configuration => Magepow => Wallpaper => General => Enable : Yes Or No   . Then, select Yes to Enable module/No to Disable the module
 
-	Sample Product  :  sample product value
+	STORES => Configuration => Magepow => Wallpaper => General => Unit Wallpaper  Select the unit of measure to be used outside the frontend
+
+	STORES => Configuration => Magepow => Wallpaper => General => Sample Product  .  Price for the product to buy sample
 
 ![store-config.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/store-config.png)
 
@@ -124,6 +129,7 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
 - Ticket Support: http://alothemes.com/ticket. If you have found any bugs or have some other problems with this extension. If the problem is not covered there, you can contact us via support center. We will respond as soon as possible (within 24 – 48 hours, usually much faster)
 
 ### 2 - Contact
+
 - Support Email support@alothemes.com
 
 - Contact Sales: contact@alothemes.com
