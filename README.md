@@ -45,6 +45,9 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
     
 ![price-frontend.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/price-frontend.png)
 
+![resultfrontend.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/resultfrontend.png)
+
+
  ###II *: Shopping cart show
 
 ![show-price-cart.png](https://github.com/magepow/magento2-wallpaper/blob/master/media/show-price-cart.png)
