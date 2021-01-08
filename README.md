@@ -1,17 +1,5 @@
 # Magento2 Wallpaper
 
-## This module can be used for purposes such as:
-    * This module can be used for purposes such as:
-    -* wallpaper .
-    -* sewing fabric.
-    -* tiled ceramic tiles.
-    -* marble .
-    -* parquet floors.
-
-    * Can norm size, product quality as desired
-
-    * You can receive product quality reviews, feedback from customers or 
-    you can receive information from products that customers want to order separately.
 
 # I : Download Magento 2 Wallpaper Extension
    ### ✓ Install Magepow Wallpaper via composer (recommend)
