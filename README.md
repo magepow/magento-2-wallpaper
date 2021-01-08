@@ -2,6 +2,10 @@
 
 # I : Frontend Show 
 
+website demo : https://wp2cart.com/colornew
+
+demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-cartoon-animals-wallpape.html
+
  I *: Product View
     
     If you want to buy a sample product, please click on "Buy Sample", 
