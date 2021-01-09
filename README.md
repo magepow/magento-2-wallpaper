@@ -94,7 +94,7 @@ demo product view : https://wp2cart.com/colornew/kids-hot-air-balloon-with-carto
    ### Step 3.1 : Configuration Wallpaper : Where to enable or disable the module and modify the sample price and units of measure for the product
    ##### STORES => Configuration => Magepow => Wallpaper
 
-    	STORES => Configuration => Magepow => Wallpaper => General => Enable : Yes Or No   . Then, select Yes to Enable module/No to Disable the module
+    STORES => Configuration => Magepow => Wallpaper => General => Enable : Yes Or No   . Then, select Yes to Enable module/No to Disable the module
 
 	STORES => Configuration => Magepow => Wallpaper => General => Unit Wallpaper  Select the unit of measure to be used outside the frontend
 
