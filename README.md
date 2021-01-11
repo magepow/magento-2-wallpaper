@@ -2,7 +2,7 @@
 
 #### Details
 
-- The module adds the option of price, product quality as desired
+- Module add custom with many options of price, product quality as you like
 
 #### Description
 
