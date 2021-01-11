@@ -1,4 +1,4 @@
-# Magento2 Wallpaper Change the product price as desired 
+# Magento2 Wallpaper Change the product price as desired,  multiple prices in one product
 
 ## Details
 
