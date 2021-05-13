@@ -14,6 +14,9 @@
 
 - Sample order can be ordered
 
+[![Latest Stable Version](https://poser.pugx.org/magepow/wallpaper/v/stable)](https://packagist.org/packages/magepow/wallpaper)
+[![Total Downloads](https://poser.pugx.org/magepow/wallpaper/downloads)](https://packagist.org/packages/magepow/wallpaper)
+[![Daily Downloads](https://poser.pugx.org/magepow/wallpaper/d/daily)](https://packagist.org/packages/magepow/wallpaper)
 
 ### I : Download Magento 2 Wallpaper Extension
    #### ✓ Install Magepow Wallpaper via composer (recommend)
